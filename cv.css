@@ -86,17 +86,3 @@ p {
 #skills ul {
     margin-bottom: 1em;
 }
-
-#education .degree {
-    display: inline;
-    font-weight: bold;
-}
-
-#education .duration {
-    display: inline;
-    float: right;
-}
-
-#education .school {
-    font-style: italic;
-}
