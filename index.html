@@ -45,11 +45,11 @@
               <ul>
                 <li>
                   Appraising and ultimately scrapping inherited outsourced
-                  Joomla-based system
+                  Joomla-based system.
                 </li>
                 <li>
                   Constructing initial data model (roughly 60 tables), defining
-                  and populating all static reference data
+                  and populating static reference data.
                 </li>
                 <li>
                   Setting up recurring sync with third party location DB
@@ -58,120 +58,115 @@
                 </li>
                 <li>
                   Performing large scale ETL process to populate new DB from
-                  legacy Joomla DB
+                  legacy Joomla DB.
                 </li>
                 <li>
                   Completing and documenting technical design of platform
-                  framework
+                  framework.
                 </li>
                 <li>
-                  Establishing coding standards
+                  Establishing coding standards.
                 </li>
                 <li>
                   Initial coding (system utility classes such as PDO, Smarty,
                   Memcached, Shared Memory, VBulletin wrappers and scripts to
-                  enhance product and review data via AWS)
+                  enhance product and review data via AWS).
                 </li>
                 <li>
-                  Hiring second developer, who is still with the company
+                  Hiring second developer, who is still with the company.
                 </li>
               </ul>
               <p>
                 Since then I have faced myriad and diverse challenges,
-                the dev team has quadrupled, the complexity of the DB systems
-                has quintupled, the web site has undergone several rewrites and
-                I have extended our API across five new services. Other notable
-                accomplishemnts:
+                the dev team has quadrupled, the complexity of DB systems has
+                quintupled, the web site has undergone several rewrites and I
+                have extended our API across four new services. Other notable
+                accomplishments:
               </p>
               <ul>
                 <li>
-                  Personally responsible for over 125 projects end-to-end
+                  Personally responsible for over 125 projects end-to-end.
                 </li>
                 <li>
                   Maintained technical leadership of dev team (currently 8
                   people) including guiding/auditing technical plans, onboarding
-                  new developers via pairing, doing code and PL/SQL review
+                  new developers via pairing, doing code and PL/SQL review.
                 </li>
                 <li>
                   Designed High Availability systems infrastructure and database
                   cluster involving:<br />
-                  - dormant backup master DB for failover in case of primary
+                  - Dormant backup master DB for failover in case of primary
                   master failure via Heartbeat, DRDB and virtual IP transfer
-                  which seamlessy maintains slaving to several slave DB's<br />
-                  - multiple live EC2 clusters in case of primary colo
-                  (Internap) failure to which traffic is rerouted via Amazon
-                  Route 53 low TTL DNS and convert most services including API's
-                  and website to HA read-only modes (thanks Sandy)<br />
-                  - extensive caching schemes on Akamai<br />
-                  - multi-server/farm deployment framework and process,<br />
-                  integrated with necessary cache-busting with Akamai, Smarty
+                  which seamlessly maintains slaving to slave DB's.<br />
+                  - Live EC2 clusters in multiple zones in case of primary colo
+                  (Internap) outage, to which traffic is rerouted via Amazon
+                  Route 53 low TTL DNS (thanks Sandy).<br />
+                  - Extensive caching schemes on Akamai.<br />
+                  - Multi-server/farm deployment framework and process,
+                  integrating necessary cache-busting with Akamai, Smarty.
                   <br />
-                  - proprietary distributed DB optimization/routing system
-                  leveraging shared memory
+                  - Proprietary distributed DB optimization/routing system
+                  leveraging shared memory.
+                </li>
+                <li>
+                  Designed and implemented interactive coding test for developer
+                  candidates to ensure proficiency in all necessary skills and
+                  areas.
                 </li>
               </ul>
               <p>
                 My primary engineering focus for over five years has been the
                 design, implementation, maintenance and extension of EXPO's
-                suite of web services. Employed in many ways by over 60 clients
-                including Amazon, Sears, Walmart, Quidsi properties (Soap.com,
-                Diapers.com), 30+ brands within Procter &amp; Gamble. Serves
-                roughly 1m hits/day. The services provided include:
+                suite of web services. They are leveraged in many ways by over
+                60 clients including Amazon, Sears, Walmart, Quidsi properties
+                (Soap.com, Diapers.com) and 30+ brands within Procter &amp;
+                Gamble. Roughly 1m hits/day are served. Services provided
+                include:
               </p>
               <ul>
                 <li>
                   Retrieving UGC video product reviews, our flagship product,
-                  generally filtered by SKU/UPC/MPN/ASIN/ISBN etc but many
+                  generally filtered by SKU/UPC/MPN/ASIN/ISBN but many
                   parameters and control features are available to accommodate
-                  our highly varied client base
+                  our highly varied client base.
                 </li>
                 <li>
                   Retrieving aggregate taxonomy based rating data, averaged and
-                  grouped in several ways across product lines or product
-                  categories as defined by client
+                  grouped in several ways across product lines or categories as
+                  defined by client.
                 </li>
                 <li>
-                  Receiving and storing feedback on any content we host which
-                  can include professional media in addition to UGC content.
-                  Feedback is broken out into the following categories:<br />
-                  - Comments<br />
-                  - &quot;Like&quot; systems, which provide functionality
-                  similar to Facebook's &quot;Like&quot; button, where a user's
-                  only options are to like something or not like it.<br />
-                  - &quot;Vote&quot; systems, which accept both positive and
-                  negative feedback &agrave; la Hot or Not.<br />
-                  - &quot;Rate&quot; systems, which allow users to give feedback
-                  along an arbitary scale (1 - 10).<br /><br />
-                  All systems are flexible and configurable.
+                  Receiving and storing user feedback (comments,
+                  &quot;Likes,&quot; Hot or Not style votes, ratings) on any
+                  content we host which can include client-generated
+                  professional media in addition to UGC. All systems are
+                  flexible and configurable.
                 </li>
                 <li>
-                  Retrieving previously recorded user feedback. There are many
-                  options for retrieval, but to enhance UX, a user identifier
-                  can be passed so feedback left by that user on any content
-                  returned is called out (so sites can &quot;remember&quot; that
-                  a user has already liked a video, etc). User feedback is also
-                  optionally returned in the main product review call, including
-                  the user-specific XML buckets, but some clients opt for just
-                  the feedback call as the output is much lighter. On expotv.com
+                  Retrieving previously recorded user feedback. A user
+                  identifier can be passed to enhance UX so feedback left by
+                  that user on any content returned is called out. On expotv.com
                   I have recently extended user-specific functionality to guest
-                  users by increasing PHP session entropy length.
+                  users by increasing PHP session entropy length. This
+                  functionality also exists in the main review lookup call but
+                  the feedback lookup response is much lighter.
                 </li>
                 <li>
                   Providing a nightly generated feed of a client's entire
                   licensed review library for clients who wish to cache data
-                  locally and have extremely large product catalogs. Feeds can
-                  include hundreds of thousands of reviews, hundreds of
+                  locally and/or have extremely large product catalogs. Feeds
+                  can include hundreds of thousands of reviews, hundreds of
                   megabytes of XML.
                 </li>
               </ul>
               <p>
                 The overall software platform as it has stood for many years
-                allows the sales team 98%+ profit on all non-custom tech sales,
+                allows the sales team 98%+ profit on all non-custom tech sales
                 and revenue has increased for 16 straight quarters. Technologies
                 involved at this point include PHP, Apache, MySQL, Memcached,
-                Graphite, jQuery, Node.js, and LogiXML. While my time here was
-                not exceptional in terms of traffic or scale statistics, it has
-                been an incredible opportunity for growth and learning.
+                Graphite, jQuery, Node.js, and LogiXML. While my time here has
+                not been exceptional in terms of traffic or scale statistics,
+                it has been an incredible opportunity for growth and learning.
               </p>
             </div>
           </li>
@@ -216,11 +211,11 @@
                 Notable projects include:
               </p>
               <h2>
-                monster.com integration
+                Monster.com Integration
               </h2>
               <p>
                 Sole engineer on year-long, multi-tiered technical integration
-                with Monster Diversity via diverse protocols and technologies.
+                with Monster Diversity across many protocols and technologies.
               </p>
               <ul>
                 <li>
@@ -231,21 +226,21 @@
                 <li>
                   Project had many demands on data parity between systems:<br />
                   - Nightly ETL process to ingest MD requisitions from an XML
-                  FTP feed to be displayed to our members after transformation
-                  to our system.<br />
+                  FTP feed which allowed open jobs to be displayed to CCI
+                  members.<br />
                   - CCI applicant data was delivered realtime via calls to MD
                   API developed for the integration.<br />
                   - Another CCI -> MD API call ran every 5m to verify delivery
-                  of job application and track applicants through interview/
-                  hiring process.
+                  of applications and track applicants through hiring pipeline,
+                  allowing near realtime status updates for our members.
                 </li>
                 <li>
                   Designed, implemented and owned output from 24/7 monitoring
                   system covering all failures system-wide.
                 </li>
                 <li>
-                  Built reporting/metrics interfaces, both live online and in
-                  scheduled deliveries, to track success of many business goals.
+                  Built reporting/metrics interfaces, both live and scheduled to
+                  track success of many business goals.
                 </li>
                 <li>
                   Technologies employed include PHP, Perl, ASP.NET, FTP, XML,
@@ -259,15 +254,15 @@
                 <li>
                   Led project to upgrade the most popular area of the site,
                   adding highly customizable content and backgrounds, photo
-                  albums, favorite books/movies/music lists, friends network
+                  albums, favorite book/movie/music lists, friends network
                   and many other UI and functionality modifications.
                 </li>
                 <li>
                   Intimately involved with scalability challenges. Code
-                  efficiency, data model analysis, database query tuning,
-                  physical server architecture and clustering management to
-                  streamline connections and decoupling, caching techniques and
-                  cache/hit ratio optimization.
+                  efficiency, data model analysis, query tuning, physical server
+                  architecture and clustering management to streamline
+                  connections and decoupling, caching techniques and cache/hit
+                  ratio optimization.
                 </li>
                 <li>
                   Pioneered iterative beta-tested development process which
@@ -280,8 +275,8 @@
               </h2>
               <ul>
                 <li>
-                  Was on team implementing oracle Star Transformation queries
-                  during development of the technology.
+                  On team implementing Oracle Star Transformation queries during
+                  development of the technology.
                 </li>
                 <li>
                   Load trending demanded aggressive action on core data, helped
@@ -317,18 +312,16 @@
                   planning.
                 </li>
                 <li>
-                  Data modeling and database implementations, stored procedures
-                  and development of integrity-maintaining SQL scripts for
-                  retroactively filling new data columns in response to feature
-                  development.
+                  Data modeling and stored function/procedure development,
+                  database administration.
                 </li>
                 <li>
                   Rapid development of secure, functional, scalable, user- and
                   developer- friendly OO applications.
                 </li>
                 <li>
-                  Regimented QA procedures and code control with bug tracking/
-                  ticketing systems and various version control systems.
+                  Regimented QA procedures and code control with bug tracking
+                  and ticketing systems, CVS and later SVN.
                   Developer testing, unit testing, regression testing, UI
                   analysis and streamlining.
                 </li>
@@ -339,7 +332,8 @@
                   implementations.
                 </li>
                 <li>
-                  Classes and workshops to ease adaptation to new technologies.
+                  Classes and workshops to ease team adaptation to new
+                  technologies.
                 </li>
               </ul>
             </div>
@@ -348,13 +342,13 @@
       </div>
       <div id="skills">
         <h1>Skills</h1>
-        <ul>Languages:<li>PHP, PL/SQL, JavaScript, Perl, UNIX shell scripting.
+        <ul>Languages:<li>PHP, PL/SQL, JavaScript, Perl, UNIX shell scripting,
         HTML/CSS. Passing familiarity with Java, ASP.NET, C, C++, C#.</li></ul>
         <ul>Databases:<li>MySQL, Oracle, PostgreSQL, MS SQL.</li></ul>
         <ul>Version Control:<li>Git, Subversion.</li></ul>
-        <ul>Sys Admin Tools:<li>Cacti, Graphite, MySQL MMM, Nagios</li></ul>
+        <ul>Sys Admin Tools:<li>Cacti, Graphite, MySQL MMM, Nagios.</li></ul>
         <ul>Development:<li>Agile, TDD, OO design, 140 WPM typist, 12+ years of
-        emacs fanaticism</li></ul>
+        Emacs fanaticism.</li></ul>
       </div>
     </div>
   </body>
