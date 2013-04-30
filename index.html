@@ -1,1 +1,361 @@
-My GitHub Page
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="author" content="Kip DeMane" />
+    <meta name="keywords" content="Kip DeMane, resume, curriculum vitae" />
+    <link href="reset.css" rel="stylesheet">
+    <link href="cv.css" rel="stylesheet">
+    <title>Kip DeMane</title>
+  </head>
+  <body>
+    <div id="resume">
+      <div id="contact">
+        <div class="name">Kip DeMane</div>
+        <div class="email"><a href="mailto:kip.demane@gmail.com">kip.demane@gmail.com</a></div>
+        <div class="github"><a href="http://github.com/kdemane">github.com/kdemane</a></div>
+      </div>
+      <div id="objective">
+        <h1>Objective</h1>
+        <p>
+          Creative, agile and experienced software engineer seeks employment on
+          a motivated, competent technical team making hands-on contributions to
+          deliver business objectives.
+        </p>
+      </div>
+      <div id="experience">
+        <h1>Experience</h1>
+        <ul>
+          <li>
+            <div>
+              <div class="title">Lead Developer</div>
+              <div class="duration">2006 - Present</div>
+            </div>
+            <div class="organization">
+              <a href="http://www.expotv.com/">
+                EXPO Communications Inc.</a> · New York City
+            </div>
+            <div class="description">
+              <p>
+                My time with EXPO began when I was recruited by the CEO to
+                bring web development in-house and create the tech department.
+                Department founding itinerary, completed within the month,
+                included:
+              </p>
+              <ul>
+                <li>
+                  Appraising and ultimately scrapping inherited outsourced
+                  Joomla-based system
+                </li>
+                <li>
+                  Constructing initial data model (roughly 60 tables), defining
+                  and populating all static reference data
+                </li>
+                <li>
+                  Setting up recurring sync with third party location DB
+                  provider for international geo-IP, city, state, country, zip
+                  code data (hundreds of millions of records).
+                </li>
+                <li>
+                  Performing large scale ETL process to populate new DB from
+                  legacy Joomla DB
+                </li>
+                <li>
+                  Completing and documenting technical design of platform
+                  framework
+                </li>
+                <li>
+                  Establishing coding standards
+                </li>
+                <li>
+                  Initial coding (system utility classes such as PDO, Smarty,
+                  Memcached, Shared Memory, VBulletin wrappers and scripts to
+                  enhance product and review data via AWS)
+                </li>
+                <li>
+                  Hiring second developer, who is still with the company
+                </li>
+              </ul>
+              <p>
+                Since then I have faced myriad and diverse challenges,
+                the dev team has quadrupled, the complexity of the DB systems
+                has quintupled, the web site has undergone several rewrites and
+                I have extended our API across five new services. Other notable
+                accomplishemnts:
+              </p>
+              <ul>
+                <li>
+                  Personally responsible for over 125 projects end-to-end
+                </li>
+                <li>
+                  Maintained technical leadership of dev team (currently 8
+                  people) including guiding/auditing technical plans, onboarding
+                  new developers via pairing, doing code and PL/SQL review
+                </li>
+                <li>
+                  Designed High Availability systems infrastructure and database
+                  cluster involving:<br />
+                  - dormant backup master DB for failover in case of primary
+                  master failure via Heartbeat, DRDB and virtual IP transfer
+                  which seamlessy maintains slaving to several slave DB's<br />
+                  - multiple live EC2 clusters in case of primary colo
+                  (Internap) failure to which traffic is rerouted via Amazon
+                  Route 53 low TTL DNS and convert most services including API's
+                  and website to HA read-only modes (thanks Sandy)<br />
+                  - extensive caching schemes on Akamai<br />
+                  - multi-server/farm deployment framework and process,<br />
+                  integrated with necessary cache-busting with Akamai, Smarty
+                  <br />
+                  - proprietary distributed DB optimization/routing system
+                  leveraging shared memory
+                </li>
+              </ul>
+              <p>
+                My primary engineering focus for over five years has been the
+                design, implementation, maintenance and extension of EXPO's
+                suite of web services. Employed in many ways by over 60 clients
+                including Amazon, Sears, Walmart, Quidsi properties (Soap.com,
+                Diapers.com), 30+ brands within Procter &amp; Gamble. Serves
+                roughly 1m hits/day. The services provided include:
+              </p>
+              <ul>
+                <li>
+                  Retrieving UGC video product reviews, our flagship product,
+                  generally filtered by SKU/UPC/MPN/ASIN/ISBN etc but many
+                  parameters and control features are available to accommodate
+                  our highly varied client base
+                </li>
+                <li>
+                  Retrieving aggregate taxonomy based rating data, averaged and
+                  grouped in several ways across product lines or product
+                  categories as defined by client
+                </li>
+                <li>
+                  Receiving and storing feedback on any content we host which
+                  can include professional media in addition to UGC content.
+                  Feedback is broken out into the following categories:<br />
+                  - Comments<br />
+                  - &quot;Like&quot; systems, which provide functionality
+                  similar to Facebook's &quot;Like&quot; button, where a user's
+                  only options are to like something or not like it.<br />
+                  - &quot;Vote&quot; systems, which accept both positive and
+                  negative feedback &agrave; la Hot or Not.<br />
+                  - &quot;Rate&quot; systems, which allow users to give feedback
+                  along an arbitary scale (1 - 10).<br /><br />
+                  All systems are flexible and configurable.
+                </li>
+                <li>
+                  Retrieving previously recorded user feedback. There are many
+                  options for retrieval, but to enhance UX, a user identifier
+                  can be passed so feedback left by that user on any content
+                  returned is called out (so sites can &quot;remember&quot; that
+                  a user has already liked a video, etc). User feedback is also
+                  optionally returned in the main product review call, including
+                  the user-specific XML buckets, but some clients opt for just
+                  the feedback call as the output is much lighter. On expotv.com
+                  I have recently extended user-specific functionality to guest
+                  users by increasing PHP session entropy length.
+                </li>
+                <li>
+                  Providing a nightly generated feed of a client's entire
+                  licensed review library for clients who wish to cache data
+                  locally and have extremely large product catalogs. Feeds can
+                  include hundreds of thousands of reviews, hundreds of
+                  megabytes of XML.
+                </li>
+              </ul>
+              <p>
+                The overall software platform as it has stood for many years
+                allows the sales team 98%+ profit on all non-custom tech sales,
+                and revenue has increased for 16 straight quarters. Technologies
+                involved at this point include PHP, Apache, MySQL, Memcached,
+                Graphite, jQuery, Node.js, and LogiXML. While my time here was
+                not exceptional in terms of traffic or scale statistics, it has
+                been an incredible opportunity for growth and learning.
+              </p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <div class="title">Senior Developer</div>
+              <div class="duration">2004 - 2006</div>
+            </div>
+            <div class="organization">
+              Community Connect Inc. · New York City
+            </div>
+            <div class="description">
+              <p>
+                Led or made significant contributions to many long-term projects
+                on high traffic web sites AsianAvenue, BlackPlanet and MiGente
+                (17m active users, 100k concurrent users, 40m page views/day,
+                2.5k hits/s peak time). The tech stack mostly comprised C, C++,
+                Perl, PHP, Apache, Oracle, and MySQL.
+              </p>
+              <p>
+                Responsibilities included
+              </p>
+              <ul>
+                <li>
+                  Tech Lead of a 6 person development team: project scoping and
+                  itemization, technical design guidance, data model and query
+                  auditing/optimization, code review.
+                </li>
+                <li>
+                  Ground-up design and implementation of projects from problem
+                  or mission statement, including performance and load testing.
+                </li>
+                <li>
+                  On-call support to handle critical production issues.
+                </li>
+                <li>
+                  Working with member feedback groups and product strategists to
+                  devise technically feasible solutions to member needs.
+                </li>
+              </ul>
+              <p>
+                Notable projects include:
+              </p>
+              <h2>
+                monster.com integration
+              </h2>
+              <p>
+                Sole engineer on year-long, multi-tiered technical integration
+                with Monster Diversity via diverse protocols and technologies.
+              </p>
+              <ul>
+                <li>
+                  Successfully co-launched with Monster and provided significant
+                  lift to job site traffic, ad revenue and minority hires, which
+                  was the key success metric for most clients for EEO.
+                </li>
+                <li>
+                  Project had many demands on data parity between systems:<br />
+                  - Nightly ETL process to ingest MD requisitions from an XML
+                  FTP feed to be displayed to our members after transformation
+                  to our system.<br />
+                  - CCI applicant data was delivered realtime via calls to MD
+                  API developed for the integration.<br />
+                  - Another CCI -> MD API call ran every 5m to verify delivery
+                  of job application and track applicants through interview/
+                  hiring process.
+                </li>
+                <li>
+                  Designed, implemented and owned output from 24/7 monitoring
+                  system covering all failures system-wide.
+                </li>
+                <li>
+                  Built reporting/metrics interfaces, both live online and in
+                  scheduled deliveries, to track success of many business goals.
+                </li>
+                <li>
+                  Technologies employed include PHP, Perl, ASP.NET, FTP, XML,
+                  SOAP, Oracle, MS SQL.
+                </li>
+              </ul>
+              <h2>
+                Personal Page Upgrade
+              </h2>
+              <ul>
+                <li>
+                  Led project to upgrade the most popular area of the site,
+                  adding highly customizable content and backgrounds, photo
+                  albums, favorite books/movies/music lists, friends network
+                  and many other UI and functionality modifications.
+                </li>
+                <li>
+                  Intimately involved with scalability challenges. Code
+                  efficiency, data model analysis, database query tuning,
+                  physical server architecture and clustering management to
+                  streamline connections and decoupling, caching techniques and
+                  cache/hit ratio optimization.
+                </li>
+                <li>
+                  Pioneered iterative beta-tested development process which
+                  incorporated member feedback at each plateau of product
+                  planning and development.
+                </li>
+              </ul>
+              <h2>
+                Oracle Star Transformation
+              </h2>
+              <ul>
+                <li>
+                  Was on team implementing oracle Star Transformation queries
+                  during development of the technology.
+                </li>
+                <li>
+                  Load trending demanded aggressive action on core data, helped
+                  designed Star Schema compatible data structures for efficient
+                  restrictive searching over dimension tables.
+                </li>
+                <li>
+                  Worked with Oracle engineers and Pythian DBA's to troubleshoot
+                  data model, indices, and execution plans.
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <div>
+              <div class="title">Lead Developer</div>
+              <div class="duration">2001 - 2004</div>
+            </div>
+            <div class="organization">
+              <a href="http://www.nextsource.com/">
+                nextSource Inc.</a> · New York City
+            </div>
+            <div class="description">
+              <p>
+                Led technology department in diverse, project-centric web
+                development in many languages on many platforms.
+                Responsibilities included:
+              </p>
+              <ul>
+                <li>
+                  Project scoping and scheduling, including detailed technical
+                  specifications backed by UML; risk assessment and contingency
+                  planning.
+                </li>
+                <li>
+                  Data modeling and database implementations, stored procedures
+                  and development of integrity-maintaining SQL scripts for
+                  retroactively filling new data columns in response to feature
+                  development.
+                </li>
+                <li>
+                  Rapid development of secure, functional, scalable, user- and
+                  developer- friendly OO applications.
+                </li>
+                <li>
+                  Regimented QA procedures and code control with bug tracking/
+                  ticketing systems and various version control systems.
+                  Developer testing, unit testing, regression testing, UI
+                  analysis and streamlining.
+                </li>
+                <li>
+                  Application and server maintenance, production support,
+                  migrations and upgrades of production servers, guaranteed
+                  methodologies for patching or upgrading production
+                  implementations.
+                </li>
+                <li>
+                  Classes and workshops to ease adaptation to new technologies.
+                </li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div id="skills">
+        <h1>Skills</h1>
+        <ul>Languages:<li>PHP, PL/SQL, JavaScript, Perl, UNIX shell scripting.
+        HTML/CSS. Passing familiarity with Java, ASP.NET, C, C++, C#.</li></ul>
+        <ul>Databases:<li>MySQL, Oracle, PostgreSQL, MS SQL.</li></ul>
+        <ul>Version Control:<li>Git, Subversion.</li></ul>
+        <ul>Sys Admin Tools:<li>Cacti, Graphite, MySQL MMM, Nagios</li></ul>
+        <ul>Development:<li>Agile, TDD, OO design, 140 WPM typist, 12+ years of
+        emacs fanaticism</li></ul>
+      </div>
+    </div>
+  </body>
+</html>
