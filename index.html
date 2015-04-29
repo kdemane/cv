@@ -24,6 +24,72 @@
               <div class="duration">2013 - 2014</div>
             </div>
             <div class="organization">
+              <a href="http://www.choxi.com/">
+                Choxi.com Inc.</a> · New York City
+            </div>
+            <div class="description">
+              <p>
+              	Once again reporting to the CTO, working with other senior
+                developers and tech leads. Specializing in DB disciplines (data
+                modeling, optimization, embedded logic) but also have standard
+                development roles. Have handled two large projects end-to-end, a
+                couple of smaller ones and been involved in a tremendous amount
+                of code review and tech plan auditing.
+              </p>
+              <ul>
+                <li>
+                  Google Search Appliance<br />
+                  - Replace proprietary legacy search functionality with GSA,
+                  yielding greatly enhanced search accuracy, speed, relevance.
+                  <br />
+                  - SAYT (search-as-you-type lookahead completion terms
+                  realtime).<br />
+                  - Near real-time management of expired/sold out deals by
+                  syncing GSA index with memcache.<br />
+                  - Leverage variants to pre-select appropriate attributes on
+                  product page based on search (shirt color/size, etc) to
+                  improve UI.<br />
+                  - Add left hand facet-based navigation and filtering.
+		</li>
+                <li>
+                  Vetted, implemented third party sales tax solution (Avalara).
+                  <br />
+                  - Perform taxonomy matching between internal product
+                  categorization and government tax codes. Hefty ETL process,
+                  outsourced manual work.<br />
+                  - Implement custom code-level "caching" scheme which
+                  pre-loaded potential tax rates based on user location data and
+                  all warehouses of vendors with items in shopping cart to avoid
+                  delays on checkout (as the web services call cannot be
+                  asynchronous since we cannot allow people to check out without
+                  an accurate tax rate).<br />
+                  - Maintain dual system for a month to ensure accuracy of new
+                  calculations compared to previously trusted system
+                </li>
+                <li>
+                  Introduced some PayPal features we were not using.<br />
+                  - Implement Log In with PayPal (LIPP)<br />
+                  - Implement Seamless Checkout (reference transactions) which
+                  significantly upped PayPal revenue by no longer redirecting
+                  users to paypal.com during checkout.
+                </li>
+                <li>
+                  Heavily involved in 6 month PCI Compliance Audit which
+                  necessitated breaking one repository into three, moving
+                  checkout to DB-less separate cluster and basically creating a
+                  Service-Oriented Architecture between the three repositories
+                  (user facing store, checkout, and API layer to facilitate
+                  communication).
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <div>
+              <div class="title">Senior Software Engineer</div>
+              <div class="duration">2013 - 2014</div>
+            </div>
+            <div class="organization">
               <a href="http://www.datalot.com/">
                 Datalot Inc.</a> · New York City
             </div>
@@ -181,7 +247,7 @@
                 98%+ profit on all non-custom tech sales and revenue has
                 increased for 16 straight quarters. Technologies involved at
                 this point include PHP, Apache, MySQL, Memcached, Graphite,
-                jQuery, Node.js, and LogiXML. While my time there was not 
+                jQuery, Node.js, and LogiXML. While my time there was not
                 exceptional in terms of traffic or scale statistics, it was
                 an incredible opportunity for growth and learning.
               </p>
