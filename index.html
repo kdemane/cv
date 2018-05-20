@@ -12,12 +12,63 @@
     <div id="resume">
       <div id="contact">
         <div class="name">Kip DeMane</div>
-        <div class="email"><a href="mailto:kip.demane@gmail.com">kip.demane@gmail.com</a></div>
-        <div class="github"><a href="http://github.com/kdemane">github.com/kdemane</a></div>
+        <div class="email">
+          <a href="mailto:kip.demane@gmail.com">kip.demane@gmail.com</a>
+        </div>
       </div>
       <div id="experience">
         <h1>Experience</h1>
         <ul>
+          <li>
+            <div>
+              <div class="title">Principal Engineer</div>
+              <div class="duration">2015 - 2018</div>
+            </div>
+            <div class="organization">
+              <a href="http://www.insider-inc.com/">
+                Insider Inc. (formerly Business Insider)</a> · New York City
+            </div>
+            <div class="description">
+		      <ul>
+		        <li>
+                  <p>
+                    Overhauled image delivery for increased efficiency and speed. An S3 listener on the original image bucket resizes uploaded images to all dimension steps below original width and saves them to another bucket which feeds
+                    redundant CDN caching (Akamai and Fastly). Reduced CPU utilization and EC2 instance sizes from previous system of dynamic resizing and mostly eliminated load times by having all sizes at the edge. Animated gifs are converted to both
+                    webm and mp4 and cached similarly.
+                  </p>
+                  <p>
+                    PHP, Symfony, S3, SQS, FFMpeg
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    Created Go service to fix HREFLang tags which were hurting SEO. Posts syndicated between different owned and operated properties were misreporting language and geo data. Service connects to all DBs and determines post origin to accurately render
+                    the canonical tag and tags for all other versions including country and language codes. Reduced HREFLang errors reported by Google from millions to double digits, boosted views across all properties.
+                  </p>
+                  <p>
+                    Go, MongoDB
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    Modernized Homepage Editor from monolithic legacy app to SOA. Created microservice to handle all homepage operations which seamlessy standardizes data structure to new schema on update of any existing homepage.
+                  </p>
+                  <p>
+                    PHP, Symfony, MongoDB, Angular JS
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    Deduped user and post collections while preserving analytics data, created unique indices and modified Symfony API's to handle constraint violation exceptions and return existing documents with a 409 conflict
+                    response.
+                  </p>
+                  <p>
+                    PHP, Symfony, JavaScript, MongoDB
+                  </p>
+                </li>
+              </ul>
+            </div>
+          </li>
           <li>
             <div>
               <div class="title">Senior Software Engineer</div>
@@ -28,60 +79,42 @@
                 Choxi.com Inc.</a> · New York City
             </div>
             <div class="description">
-              <p>
-              	Reporting to the CTO, working with other senior
-                developers and tech leads. Specializing in DB disciplines (data
-                modeling, optimization, embedded logic) but also have standard
-                development roles. Have handled two large projects end-to-end, a
-                couple of smaller ones and been involved in a tremendous amount
-                of code review and tech plan auditing. PHP, MySQL, PL/SQL,
-                Javascript, jQuery, memcached primarily. Using Clustrix for MySQL
-                clustering.
-              </p>
-              <ul>
-                <li>
-                  Google Search Appliance<br />
-                  - Replace proprietary legacy search functionality with GSA,
-                  yielding greatly enhanced search accuracy, speed, relevance.
-                  <br />
-                  - SAYT (search-as-you-type lookahead completion terms
-                  realtime).<br />
-                  - Near real-time management of expired/sold out deals by
-                  syncing GSA index with memcache.<br />
-                  - Leverage variants to pre-select appropriate attributes on
-                  product page based on search (shirt color/size, etc) to
-                  improve UI.<br />
-                  - Add left hand facet-based navigation and filtering.
-		</li>
-                <li>
-                  Vetted, implemented third party sales tax solution (Avalara).
-                  <br />
-                  - Perform taxonomy matching between internal product
-                  categorization and government tax codes. Hefty ETL process,
-                  outsourced manual work.<br />
-                  - Implement custom code-level "caching" scheme which
-                  pre-loaded potential tax rates based on user location data and
-                  all warehouses of vendors with items in shopping cart to avoid
-                  delays on checkout (as the web services call cannot be
-                  asynchronous since we cannot allow people to check out without
-                  an accurate tax rate).<br />
-                  - Maintain dual system for a month to ensure accuracy of new
-                  calculations compared to previously trusted system.
+		      <ul>
+		        <li>
+                  <p>
+                    Replaced legacy search functionality with Google Search Appliance. Improved search accuracy and speed, introduced search-as-you-type for realtime lookahead completion of search terms.
+                    Kept GSA index current by adding/removing deals as they were added to inventory or sold out. Leveraged variants to pre-select appropriate attributes on product page based on search terms (shirt color/size, etc) to improve UX. Added left hand facet-based
+                    navigation and filtering for post-search refinement.
+                  </p>
+                  <p>
+                    PHP, JavaScript, Memcached, proprietary Google technology
+                  </p>
                 </li>
                 <li>
-                  Introduced some PayPal features we were not using.<br />
-                  - Implement Log In with PayPal (LIPP).<br />
-                  - Implement Seamless Checkout (reference transactions) which
-                  significantly upped PayPal revenue by no longer redirecting
-                  users to paypal.com during checkout.
+                  <p>
+                    Implemented third party sales tax solution (Avalara) after vetting several vendors. Performed taxonomy-matching ETL process via stored procedures to sync internal product categorization with government tax codes
+                    required to accurately calculate tax rates. Developed caching system to maintain potential tax rates on the browser during shopping based on user's shipping address and all vendors' shipping warehouses to streamline checkout.
+                  </p>
+                  <p>
+                    PHP, PostgreSQL, PL/SQL, JQuery
+                  </p>
                 </li>
                 <li>
-                  Heavily involved in 6 month PCI Compliance Audit which
-                  necessitated breaking one repository into three, moving
-                  checkout to DB-less separate cluster and basically creating a
-                  Service-Oriented Architecture between the three repositories
-                  (user facing store, checkout, and API layer to facilitate
-                  communication).
+                  <p>
+                    Worked with two other engineers on 6 month PCI Compliance Audit. Split monolithic repository into three (user facing store, checkout, API). Physically segmented baremetal network so credit card handling was isolated and had no contact with the DB.
+                    Forced SOA/microservice design patterns while direct DB access was stripped from most of the new system in favor of REST calls.
+                  </p>
+                  <p>
+                    PHP, PostgreSQL, Symfony, Memcached
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    Updated PayPal processing suite which was our main method of accepting payments. Implemented Log In with PayPal and Seamless Checkout (reference transactions) which significantly boosted PayPal revenue by no longer redirecting the user to paypal.com during checkout.
+                  </p>
+                  <p>
+                    PHP, JQuery
+                  </p>
                 </li>
               </ul>
             </div>
@@ -96,57 +129,41 @@
                 Datalot Inc.</a> · New York City
             </div>
             <div class="description">
-              <p>
-              	Worked with very senior team and CTO on various projects. Many
-              	deployments daily allowed by strong unit test coverage and
-              	continuous integration. Maintained 6 Mercurial repositories and
-              	performed development on 3 vagrant instances. DDL perfomed by
-              	Python Django models. DB included many tables with tens or
-              	hundreds of millions of records requiring many operations to be
-              	performed over scheduled summary tables and views.
-              </p>
               <ul>
                 <li>
-                  Spearheaded and launched new platform to allow clients to
-                  deploy their own white-label implementations of the flagship
-                  product (leadsales). Provided full flexibility and
-                  customization of look and feel, separation of form elements
-                  across multiple pages, A/B testing with divergent
-                  implementations. Seamlessly performed AJAX and backend
-                  validation, session management, DB transactions, ad delivery,
-                  confirmation pixels and ultimate handoff to IVR's/agents via
-                  interaction with several Datalot API's. Services were Python
-                  Django, AJAX API wrappers were PHP, dynamic form buildout was
-                  done with Angular JS, DB was MySQL.
-		</li>
-                <li>
-                  Piloted first implementations on above platform.
+                  <p>
+                    Created new platform to enable white-label implementations of the flagship leadsales product. Provided display customization, separation of form elements across multiple pages and A/B testing between different flows. Performed AJAX and
+                    backend validation, session management, DB transactions, ad delivery, confirmation pixels and ultimate handoff to IVR's/agents via interaction with several Datalot API's.
+                  </p>
+                  <p>
+                    Python, Django, PHP, CodeIgniter, Angular JS, MySQL
+                  </p>
                 </li>
                 <li>
-                  Completed two phase merge/revamp of two most heavily
-                  trafficked pages into one page with tabular navigation.
-                  Modernized many UI components (involved creating wrapper
-                  classes for Highcharts JS, Knob and Datatables JQuery
-                  plugins), provided realtime socket-driven browser updates to
-                  any users viewing the same client page via Pusher by sending
-                  messages over dynamic channels between DB-monitoring Python
-                  daemon and JQuery listeners on client page. Dramatically
-                  improved performance and load times by optimizing queries,
-                  creating new indices, refactoring PHP CodeIgniter models.
+                  <p>
+                    Moved legacy file-based product definition system into the database by writing a library to	serialize Python objects and references into strings and rehydrate them for use on fetch. Product definition objects were then used to populate Angular configs to ultimately
+                    render forms for the abovementioned product.
+                  </p>
+                  <p>
+                    Python, Django, MySQL, Angular JS
+                  </p>
                 </li>
                 <li>
-                  Created and launched several other Python Django services
-                  <br />
-                  - Geo and demographic filter/targeting management service
-                  which verified client filters and added them to cache-based
-                  filtering layer. Involved complex math for radius-based
-                  zipcode filtering.<br />
-                  - Replaced hardcoded internal product definition files with
-                  data-driven product lookup service on new DB schema, imported
-                  serialized Python objects and references into DB, wrote
-                  library to rehydrate validator objects and access validator
-                  methods to dynamically pass options out to above referenced
-                  Python services to populate Angular configs to build forms.
+                  <p>
+                    Merged two most heavily trafficked pages into one page with tabular navigation. Modernized many UI components, provided realtime socket-driven browser updates to multiple internal users viewing the same client page via Pusher by sending messages over dynamic channels
+                    between DB-monitoring Python daemon and JQuery listeners. Improved performance and load times by optimizing queries, creating new indices, refactoring PHP CodeIgniter models.
+                  </p>
+                  <p>
+                    PHP, CodeIgniter, JQuery (Highcharts, Knob, Datatables plugins), MySQL, Pusher
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    Built geo and demographic filtering/targeting service which verified client filters and added them to cache-based filtering layer. Involved complex math for radius-based zipcode filtering. Embedded calls to new service in PHP application to improve data integrity and UX.
+                  </p>
+                  <p>
+                    Python, Django, PHP, CodeIgniter, MySQL
+                  </p>
                 </li>
               </ul>
             </div>
@@ -157,225 +174,27 @@
               <div class="duration">2006 - 2013</div>
             </div>
             <div class="organization">
-              <a href="http://www.expotv.com/">
-                EXPO Communications Inc.</a> · New York City
+              <a href="http://www.gen.video/">
+                gen.video</a> · New York City
             </div>
             <div class="description">
               <p>
-                My time with EXPO began when I was recruited by the CEO to
-                bring web development in-house and create the tech department.
-                Department founding itinerary, completed within the month,
-                included:
+                2nd employee at video startup. Ran tech for 7 years. Used nearly every feature of MySQL (stored procedures, triggers, event scheduler, materialized views). Built a very full-featured REST API for partners to ingest our content. ETL jobs for product
+                catalog/taxonomy matching with large companies (Amazon, Walmart, Sears, Quidsi, P & G, etc). Infrastructure/ops work setting up high availability, redundant systems on baremetal. Many additonal projects open for discussion.
               </p>
-              <ul>
-                <li>
-                  Appraising and ultimately scrapping inherited outsourced
-                  Joomla-based system.
-                </li>
-                <li>
-                  Constructing initial data model (roughly 60 tables), defining
-                  and populating static reference data.
-                </li>
-                <li>
-                  Setting up recurring sync with third party location DB
-                  provider for international geo-IP, city, state, country, zip
-                  code data (hundreds of millions of records).
-                </li>
-                <li>
-                  Performing large scale ETL process to populate new DB from
-                  legacy Joomla DB.
-                </li>
-                <li>
-                  Completing and documenting technical design of platform
-                  framework (still in use).
-                </li>
-                <li>
-                  Establishing coding standards.
-                </li>
-                <li>
-                  Initial coding (system utility classes such as PDO, Smarty,
-                  Memcached, Shared Memory, VBulletin wrappers and scripts to
-                  enhance product and review data via AWS).
-                </li>
-                <li>
-                  Hiring second developer, who is still with the company.
-                </li>
-              </ul>
               <p>
-                After that I faced myriad and diverse challenges, the dev team
-                quadrupled, the complexity of DB systems quintupled, the web
-                site underwent several revamps and I extended the API across
-                four new services. Other notable accomplishments:
-              </p>
-              <ul>
-                <li>
-                  Personally responsible for over 125 projects end-to-end.
-                </li>
-                <li>
-                  Maintained technical leadership of dev team (currently 8
-                  people) including guiding/auditing technical plans, onboarding
-                  new developers via pairing, doing code and PL/SQL review.
-                </li>
-                <li>
-                  Designed High Availability systems infrastructure and database
-                  cluster involving:<br />
-                  - Dormant backup master DB for failover in case of primary
-                  master failure via Heartbeat, DRDB and virtual IP transfer
-                  which seamlessly maintains replication to slave DB's.<br />
-                  - Live EC2 clusters in multiple zones in case of primary colo
-                  (Internap) outage, to which traffic is rerouted via Amazon
-                  Route 53 low TTL DNS (thanks Sandy).<br />
-                  - Extensive caching schemes on Akamai.<br />
-                  - Multi-server/farm deployment framework and process,
-                  integrating necessary cache-busting with Akamai, Smarty.
-                  <br />
-                  - Proprietary distributed DB optimization/routing system
-                  leveraging shared memory.
-                </li>
-                <li>
-                  Designed and implemented interactive coding test for developer
-                  candidates to ensure proficiency in all necessary skills and
-                  areas.
-                </li>
-              </ul>
-              <p>
-                My primary engineering focus for over five years was the
-                design, implementation, maintenance and extension of EXPO's
-                suite of web services. They are leveraged in many ways by over
-                60 clients including Amazon, Sears, Walmart, Quidsi properties
-                (Soap.com, Diapers.com) and 30+ brands within Procter &amp;
-                Gamble. Roughly 1m hits/day are served. The overall software
-                platform as it has stood for many years allows the sales team
-                98%+ profit on all non-custom tech sales and revenue has
-                increased for 16 straight quarters. Technologies involved at
-                this point include PHP, Apache, MySQL, Memcached, Graphite,
-                jQuery, Node.js, and LogiXML. While my time there was not
-                exceptional in terms of traffic or scale statistics, it was
-                an incredible opportunity for growth and learning.
+                Primarily PHP, MySQL, PL/SQL, JavaScript, JQuery, Memcached
               </p>
             </div>
           </li>
           <li>
             <div>
-              <div class="title">Senior Developer</div>
-              <div class="duration">2004 - 2006</div>
-            </div>
-            <div class="organization">
-              Community Connect Inc. · New York City
-            </div>
-            <div class="description">
               <p>
-                Led or made significant contributions to many long-term projects
-                on high traffic web sites AsianAvenue, BlackPlanet and MiGente
-                (17m active users, 100k concurrent users, 40m page views/day,
-                2.5k hits/s peak time). The tech stack mostly comprised C, C++,
-                Perl, PHP, Apache, Oracle, and MySQL.
+                References available upon request.
               </p>
-              <p>
-                Responsibilities included
-              </p>
-              <ul>
-                <li>
-                  Tech Lead of a 6 person development team: project scoping and
-                  itemization, technical design guidance, data model and query
-                  auditing/optimization, code review.
-                </li>
-                <li>
-                  Ground-up design and implementation of projects from problem
-                  or mission statement, including performance and load testing.
-                </li>
-                <li>
-                  Working with member feedback groups and product strategists to
-                  devise technically feasible solutions to member needs.
-                </li>
-              </ul>
-              <p>
-                Notable projects include:
-              </p>
-              <h2>
-                Monster.com Integration
-              </h2>
-              <p>
-                Sole engineer on year-long, multi-tiered technical integration
-                with Monster Diversity. Technologies involved included PHP,
-                Perl, ASP.NET, FTP, XML, SOAP, Oracle, MS SQL.
-              </p>
-              <ul>
-                <li>
-                  Successfully co-launched with Monster and provided significant
-                  lift to job site traffic, ad revenue and minority hires, which
-                  was the key success metric for most clients for EEO.
-                </li>
-                <li>
-                  New MD requisitions were posted nightly on our properties,
-                  applications were processed realtime and our members were
-                  provided their status in the hiring pipeline within 5 minutes.
-                  Several API's on both sides were developed for the project.
-                </li>
-                <li>
-                  Designed, implemented and owned output from 24/7 monitoring
-                  system covering all failures system-wide.
-                </li>
-                <li>
-                  Built reporting/metrics interfaces, both live and scheduled to
-                  track success of many business goals.
-                </li>
-              </ul>
-              <h2>
-                Personal Page Upgrade
-              </h2>
-              <ul>
-                <li>
-                  Led project to upgrade the most popular area of the site,
-                  adding highly customizable content and backgrounds, photo
-                  albums, favorite book/movie/music lists, friends network
-                  and many other UI and functionality modifications.
-                </li>
-                <li>
-                  Intimately involved with scalability challenges. Code
-                  efficiency, data model analysis, query tuning, physical server
-                  architecture and clustering management to streamline
-                  connections and decoupling, caching techniques and cache/hit
-                  ratio optimization.
-                </li>
-                <li>
-                  Pioneered iterative beta-tested development process which
-                  incorporated member feedback at each plateau of product
-                  planning and development.
-                </li>
-              </ul>
-              <h2>
-                Oracle Star Transformation
-              </h2>
-              <ul>
-                <li>
-                  On team implementing Oracle Star Transformation queries during
-                  development of the technology.
-                </li>
-                <li>
-                  Load trending demanded aggressive action on core data, helped
-                  designed Star Schema compatible data structures for efficient
-                  restrictive searching over dimension tables.
-                </li>
-                <li>
-                  Worked with Oracle engineers and Pythian DBA's to troubleshoot
-                  data model, indices, and execution plans.
-                </li>
-              </ul>
             </div>
           </li>
         </ul>
-      </div>
-      <div id="skills">
-        <h1>Skills</h1>
-        <ul>Languages:<li>PHP, Python, PL/SQL, JavaScript, JQuery, Angular JS,
-        Perl, UNIX shell scripting, HTML/CSS.
-        </li></ul>
-        <ul>Databases:<li>MySQL, Oracle, PostgreSQL, MS SQL.</li></ul>
-        <ul>Version Control:<li>Git, Mercurial, Subversion.</li></ul>
-        <ul>Development:<li>Agile, TDD, OO design, SOA, Asana, Basecamp, Jira,
-        Pivotal Tracker, Trello, 140 WPM DVORAK typist, 14+ years of Emacs
-        fanaticism.</li></ul>
       </div>
     </div>
   </body>
